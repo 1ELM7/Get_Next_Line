@@ -14,10 +14,10 @@
 
 char	*get_next_line(int fd)
 {
-	static t_list	*stock[257];
+	static t_list	*stock[255];
 	char			*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, &line, 0) < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, &line, 0) < 0 || fd > 256)
 		return (NULL);
 	line = NULL;
 	read_stock(fd, &stock[fd]);
