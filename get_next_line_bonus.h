@@ -18,6 +18,10 @@
 # include <sys/uio.h>
 # include <unistd.h>
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 5
+# endif
+
 typedef struct s_list
 {
 	char			*content;
